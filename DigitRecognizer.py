@@ -61,8 +61,8 @@ annealer = LearningRateScheduler(lambda x: 1e-3 * 0.9 ** x)
 
 hist = model.fit_generator(datagen.flow(x_train, y_train, batch_size=16),
                            steps_per_epoch=500,
-                           epochs=20, #Increase this when not on Kaggle kernel
-                           verbose=2,  #1 for ETA, 0 for silent
+                           epochs=50, 
+                           verbose=2,  
                            validation_data=(x_val[:400,:], y_val[:400,:]), #For speed
                            callbacks=[annealer])
 
