@@ -47,7 +47,7 @@ model.add(Dense(512, activation='relu'))
 model.add(Dropout(0.25))
 model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(10, activation='softmax'))
+model.add(Dense(10, activation='softmax'))  #as there are 10 category of images
 
 #DATA AUGMENTATION
 datagen = ImageDataGenerator(zoom_range = 0.1,
@@ -63,7 +63,7 @@ hist = model.fit_generator(datagen.flow(x_train, y_train, batch_size=16),
                            steps_per_epoch=500,
                            epochs=50, 
                            verbose=2,  
-                           validation_data=(x_val[:400,:], y_val[:400,:]), #For speed
+                           validation_data=(x_val[:400,:], y_val[:400,:]),
                            callbacks=[annealer])
 
 final_loss, final_acc = model.evaluate(x_val, y_val, verbose=0)
