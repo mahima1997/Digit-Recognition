@@ -73,7 +73,7 @@ model.save_weights("digit_recog_model_weights.h5")
 model.save('digit_recog_model.h5')
 
 y_hat = model.predict(x_val)
-y_pred = np.argmax(y_hat, axis=1)
+y_pred = np.argmax(y_hat, axis=1)   #to select that digit as output which has the maximum probabilty of being the output
 y_true = np.argmax(y_val, axis=1)
 cm = confusion_matrix(y_true, y_pred)
 print(cm)
