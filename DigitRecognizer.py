@@ -69,8 +69,8 @@ hist = model.fit_generator(datagen.flow(x_train, y_train, batch_size=16),
 final_loss, final_acc = model.evaluate(x_val, y_val, verbose=0)
 print("Final loss: {0:.4f}, final accuracy: {1:.4f}".format(final_loss, final_acc))
 
-model.save_weights("digit_recog_model_weights.h5", overwrite=True)
-model.save('digit_recog_model.h5', overwrite=True)
+model.save_weights("digit_recog_model_weights.h5")
+model.save('digit_recog_model.h5')
 
 y_hat = model.predict(x_val)
 y_pred = np.argmax(y_hat, axis=1)
