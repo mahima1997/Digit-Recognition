@@ -10,7 +10,7 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import LearningRateScheduler
 
 
-train = np.loadtxt("train.csv", skiprows=1, dtype='int', delimiter=',')
+train = np.loadtxt("train.csv", skiprows=1, dtype='int', delimiter=',')   #outputs an array
 test= np.loadtxt("test.csv",skiprows=1, dtype='int', delimiter=',')
 
 
